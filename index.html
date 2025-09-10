@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD T-Shirts - Custom Apparel Design</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#home" class="logo">JD T-Shirts</a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#custom" class="nav-link">Custom Design</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" id="cart-icon" title="Open cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 90px;">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>JD T-Shirts</h1>
+                <p class="hero-slogan">Affordable Customization — Make It Yours</p>
+                <p>Custom t-shirts and hoodies at pocket friendly prices. Upload your design, place the order — we'll print and deliver.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#products" class="btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        Shop Now
+                    </a>
+                    <a href="#custom" class="btn btn-secondary">
+                        <i class="fas fa-paint-brush"></i>
+                        Design Custom
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Products</h2>
+
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All Products</button>
+                    <button class="filter-btn" data-filter="tshirt">T-Shirts</button>
+                    <button class="filter-btn" data-filter="hoodie">Hoodies</button>
+                    <button class="filter-btn" data-filter="fullsleeve">Full Sleeve</button>
+                </div>
+
+                <div class="products-grid" id="products-container">
+                    <!-- Products will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Design Section -->
+        <section id="custom" class="section custom-section">
+            <div class="container">
+                <h2 class="section-title">Custom T-Shirt Designer</h2>
+
+                <div class="custom-container">
+                    <div class="customization-options">
+                        <div class="option-group">
+                            <label>Select Garment Type</label>
+                            <div class="garment-selector">
+                                <div class="garment-option active" data-garment="tshirt">
+                                    <i class="fas fa-tshirt"></i>
+                                    <span>T-Shirt</span>
+                                    <small>₹499</small>
+                                </div>
+                                <div class="garment-option" data-garment="hoodie">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Hoodie</span>
+                                    <small>₹499</small>
+                                </div>
+                                <div class="garment-option" data-garment="fullsleeve">
+                                    <i class="fas fa-tshirt"></i>
+                                    <span>Full Sleeve</span>
+                                    <small>₹499</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Neck Type & Size</label>
+                            <div style="display:flex; gap:0.5rem">
+                                <select id="neck-type">
+                                    <option value="round">Round Neck</option>
+                                    <option value="v">V Neck</option>
+                                </select>
+                                <select id="size-select">
+                                    <option value="S">S</option>
+                                    <option value="M" selected>M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Garment Color</label>
+                            <div class="color-options">
+                                <div class="color-option active" data-color="white" style="background-color: white; border: 2px solid #ddd;"></div>
+                                <div class="color-option" data-color="black" style="background-color: black;"></div>
+                                <div class="color-option" data-color="navy" style="background-color: navy;"></div>
+                                <div class="color-option" data-color="red" style="background-color: red;"></div>
+                                <div class="color-option" data-color="blue" style="background-color: blue;"></div>
+                                <div class="color-option" data-color="gray" style="background-color: gray;"></div>
+                            </div>
+                        </div>
+
+                        <div class="price-display">
+                            <div class="price" id="custom-total-price">₹499</div>
+                            <small>Base price for custom design</small>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Upload Your Design</label>
+                            <div class="file-upload">
+                                <input type="file" id="design-upload" accept="image/*">
+                                <label for="design-upload" class="file-upload-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Click to upload or drag & drop</span>
+                                    <small>PNG, JPG, SVG up to 10MB</small>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="btn" id="add-custom-to-cart" style="width: 100%;">
+                            <i class="fas fa-cart-plus"></i>
+                            Add Custom Design to Cart
+                        </button>
+                    </div>
+
+                    <div class="preview-container">
+                        <h3 style="text-align: center; margin-bottom: 1rem;">Design Preview</h3>
+                        <div class="tshirt-preview">
+                            <div class="tshirt-side">
+                                <h4>Front</h4>
+                                <div class="garment-container" id="front-preview">
+                                    <div class="custom-overlay" id="design-overlay" style="display: none;">
+                                        <img id="design-preview" src="" alt="Design">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-info">
+                            <p><i class="fas fa-info-circle"></i> Upload an image to see your design on the garment</p>
+                            <p><i class="fas fa-palette"></i> Choose colors and garment type from the left panel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About JD T-Shirts</h2>
+                <div class="about-content">
+                    <div>
+                        <p>At JD T-Shirts we help you express yourself. Affordable, durable and printed with care.</p>
+                        <p>Custom service: upload your image and position it on the mockup. On checkout we'll open WhatsApp prefilled with the full order details so you can confirm and attach high-quality images for custom items.</p>
+                        <p>We specialize in high-quality printing with vibrant colors that last. Whether it's a personal design, business logo, or special event, we bring your vision to life on premium garments.</p>
+                    </div>
+                    <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=600" alt="About Us">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 73977 92752</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@jdtshirts.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Mumbai, Maharashtra, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JD T-Shirts</h3>
+                    <p>Your trusted partner for premium custom apparel. Quality designs, comfortable fits, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#custom">Custom Design</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Hoodies</a></li>
+                        <li><a href="#">Full Sleeve</a></li>
+                        <li><a href="#">Custom Designs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +91 73977 92752</p>
+                    <p><i class="fas fa-envelope"></i> info@jdtshirts.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JD T-Shirts. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="cart-close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                Total: <span id="cart-total">₹0</span>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-secondary" id="clear-cart-btn">Clear Cart</button>
+                <button class="btn" id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="checkout-close">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Full Name *</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-whatsapp">WhatsApp Number *</label>
+                    <input type="tel" id="customer-whatsapp" required placeholder="+91xxxxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Delivery Address *</label>
+                    <textarea id="customer-address" rows="3" required></textarea>
+                </div>
+
+                <h3>Order Items</h3>
+                <div id="checkout-items"></div>
+
+                <div class="cart-total">
+                    Total: <span id="checkout-total">₹0</span>
+                </div>
+
+                <div style="margin-top:1rem; padding: 1rem; background: #f0f9ff; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+                    <p style="margin: 0; font-size: 0.9rem; color: #1e40af;">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Important:</strong> After clicking "Place Order", WhatsApp will open with your order details. 
+                        For custom items, please attach the high-quality design images to the chat when prompted.
+                    </p>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">
+                    <i class="fab fa-whatsapp"></i>
+                    Place Order via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification success">
+        <span id="notification-text"></span>
+        <button class="notification-close" id="notification-close">&times;</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/custom-designer.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
