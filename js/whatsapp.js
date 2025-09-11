@@ -31,7 +31,7 @@
             
             lines.push(`${index + 1}. *${item.title}*`);
             lines.push(`   Price: ₹${item.price} × ${item.quantity} = ₹${itemTotal}`);
-            lines.push(`   Size: ${item.size} | Color: ${item.color} | Neck: ${item.neck}`);
+          
             
             if (item.isCustom) {
                 lines.push(`   🎨 *CUSTOM DESIGN* - Image will be attached below`);
@@ -47,14 +47,10 @@
             lines.push('📎 *IMPORTANT:*');
             lines.push('Please attach the HIGH-QUALITY design images for custom items in this chat.');
             lines.push('Accepted formats: PNG, JPG, SVG');
-            lines.push('Minimum resolution: 300 DPI for best print quality');
             lines.push('');
         }
         
-        lines.push('✅ Please confirm this order and we will process it within 24 hours.');
-        lines.push('🚚 Delivery time: 3-5 business days');
-        lines.push('');
-        lines.push('Thank you for choosing JD T-Shirts! 👕');
+      
         
         return lines.join('\n');
     }

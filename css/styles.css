@@ -22,13 +22,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    /*
-/*
-* Created with https://www.css-gradient.com
-* Gradient link: https://www.css-gradient.com/?c1=092e68&c2=8d90dd&gt=l&gd=dtl
-*/
-background: #092E68;
-background: linear-gradient(135deg, #092E68, #8D90DD);
+    background-color: var(--secondary-color);
 }
 
 /* Header */
@@ -58,6 +52,85 @@ header {
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background-color: #f3f4f6;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+}
+
+.mobile-nav ul li {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.mobile-nav ul li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-nav ul li a:hover,
+.mobile-nav ul li a.active {
+    background-color: #fef2f2;
+    color: var(--accent-color);
 }
 
 nav ul {

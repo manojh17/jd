@@ -3,6 +3,9 @@
     const productsContainer = document.getElementById('products-container');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
 
     // Smooth scrolling for navigation
     function smoothScroll(target) {
@@ -18,6 +21,19 @@
         }
     }
 
+    // Mobile menu toggle
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+            mobileMenuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    });
     // Handle navigation clicks
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -32,11 +48,35 @@
         });
     });
 
+    // Handle mobile navigation clicks
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = link.getAttribute('href');
+            
+            // Update active nav link
+            mobileNavLinks.forEach(l => l.classList.remove('active'));
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            // Close mobile menu
+            mobileMenuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            
+            smoothScroll(target);
+        });
+    });
+
     // Handle hero section buttons
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const target = link.getAttribute('href');
+            
+            // Close mobile menu if open
+            mobileMenuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            
             smoothScroll(target);
         });
     });
@@ -76,22 +116,14 @@
                 <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
                     <label style="flex: 1;">
                         Size:
-                        <select class="size-select" style="width: 100%; padding: 0.25rem; margin-top: 0.25rem;">
+                        <select class="size-select" style="width: 100%; padding: 0.25rem; margin-top: 0.25rem; border: 1px dotted #ccc; border-radius: 4px;">
                             <option value="S">S</option>
                             <option value="M" selected>M</option>
                             <option value="L">L</option>
                             <option value="XL">XL</option>
                         </select>
                     </label>
-                    <label style="flex: 1;">
-                        Neck:
-                        <select class="neck-select" style="width: 100%; padding: 0.25rem; margin-top: 0.25rem;">
-                            <option value="round">Round</option>
-                            <option value="v">V</option>
-                            ${product.category === 'hoodie' ? '<option value="hood">Hood</option>' : ''}
-                            ${product.category === 'fullsleeve' ? '<option value="henley">Henley</option>' : ''}
-                        </select>
-                    </label>
+                    
                 </div>
                 
                 <div class="product-price" data-base-price="${defaultColorData.price}">₹${defaultColorData.price}</div>
@@ -133,7 +165,7 @@
         const addToCartBtn = card.querySelector('.add-to-cart-btn');
         addToCartBtn.addEventListener('click', () => {
             const sizeSelect = card.querySelector('.size-select');
-            const neckSelect = card.querySelector('.neck-select');
+            
             const activeColor = card.querySelector('.product-color-option.active');
             const selectedColor = activeColor.dataset.color;
             const selectedPrice = parseInt(activeColor.dataset.price);
@@ -146,7 +178,7 @@
                 category: product.category,
                 img: selectedImg,
                 size: sizeSelect.value,
-                neck: neckSelect.value,
+               
                 color: selectedColor,
                 isCustom: false,
                 quantity: 1
@@ -211,7 +243,14 @@
                 
                 if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
                     navLinks.forEach(link => link.classList.remove('active'));
+                    mobileNavLinks.forEach(link => link.classList.remove('active'));
                     navLink.classList.add('active');
+                    
+                    // Update mobile nav active state
+                    const mobileNavLink = document.querySelector(`.mobile-nav-link[href="#${sectionId}"]`);
+                    if (mobileNavLink) {
+                        mobileNavLink.classList.add('active');
+                    }
                 }
             }
         });

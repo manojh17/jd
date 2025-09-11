@@ -41,7 +41,7 @@
             item.id === product.id && 
             item.size === product.size && 
             item.color === product.color && 
-            item.neck === product.neck &&
+         
             item.isCustom === product.isCustom
         );
 
@@ -102,7 +102,7 @@
                     <div class="cart-item-title">${item.title}${item.isCustom ? ' (Custom)' : ''}</div>
                     <div class="cart-item-price">₹${item.price}</div>
                     <div class="custom-design-info">
-                        Size: ${item.size || 'M'} | Color: ${item.color || 'White'} | Neck: ${item.neck || 'Round'}
+                        Size: ${item.size || 'M'} | Color: ${item.color || 'White'} }
                         ${item.isCustom ? '<br><small style="color: var(--accent-color);">Custom design included</small>' : ''}
                     </div>
                     <div class="quantity-controls">
@@ -173,7 +173,7 @@
                 <div class="checkout-custom-details">
                     <h5>${item.title}${item.isCustom ? ' (Custom)' : ''}</h5>
                     <p>Price: ₹${item.price} x ${item.quantity} = ₹${item.price * item.quantity}</p>
-                    <p>Size: ${item.size || 'M'} | Color: ${item.color || 'White'} | Neck: ${item.neck || 'Round'}</p>
+                    <p>Size: ${item.size || 'M'} | Color: ${item.color || 'White'} }</p>
                     ${item.isCustom ? '<p style="color: var(--accent-color); font-weight: 500;"><i class="fas fa-palette"></i> Custom design will be attached in WhatsApp</p>' : ''}
                 </div>
             `;

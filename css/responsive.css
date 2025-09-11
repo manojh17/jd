@@ -1,0 +1,709 @@
+/* Mobile Responsive Styles for JD T-Shirts */
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+
+    html,body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+          .bungee-spice-regular {
+  font-family: "Bungee Spice", sans-serif;
+  font-size: xx-small;
+}
+    /* Header adjustments */
+    .header-container {
+        padding: 0 1rem;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    /* Show mobile menu toggle */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* Hide desktop navigation */
+    nav {
+        display: none;
+    }
+
+    .cart-icon {
+        padding: 0.75rem;
+        margin-left: 75px;
+    }
+
+    /* Hero section mobile */
+    .hero {
+        height: 80vh;
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-slogan {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        margin: 0.25rem;
+    }
+
+    /* Section spacing */
+    section {
+        padding: 3rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Products grid mobile */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .product-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product-info {
+        padding: 1rem;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+    }
+
+    .product-price {
+        font-size: 1.25rem;
+    }
+
+    /* Product color options mobile */
+    .product-color-options {
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .product-color-option {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Filter buttons mobile */
+    .filter-container {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 20px;
+    }
+
+    /* Custom design section mobile */
+    .custom-section {
+        padding: 3rem 0;
+        
+    }
+
+    .custom-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .customization-options {
+        padding: 1.5rem;
+        order: 2;
+    }
+
+    .preview-container {
+        padding: 1.5rem;
+        margin-left: -1rem;
+        order: 1;
+    }
+
+    .garment-selector {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .garment-option {
+        padding: 0.75rem;
+        text-align: center;
+    }
+
+    .garment-option i {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .garment-option span {
+        font-size: 0.9rem;
+    }
+
+    .garment-option small {
+        font-size: 0.8rem;
+    }
+
+    /* Custom editor mobile */
+    .editor-toolbar {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .control-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .editor-stage {
+        margin: 1rem 0;
+    }
+
+    #mockupCanvas {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .garment-container {
+        width: 150px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .custom-overlay {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Color options mobile */
+    .color-options {
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .color-option {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Form elements mobile */
+    .option-group {
+        margin-bottom: 1rem;
+    }
+
+    .option-group label {
+        font-size: 0.9rem;
+    }
+
+    .option-group input,
+    .option-group select,
+    .option-group textarea {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    /* File upload mobile */
+    .file-upload-label {
+        padding: 1rem;
+    }
+
+    .file-upload-label i {
+        font-size: 1.5rem;
+    }
+
+    .file-upload-label span {
+        font-size: 0.9rem;
+    }
+
+    .file-upload-label small {
+        font-size: 0.8rem;
+    }
+
+    /* Price display mobile */
+    .price-display {
+        padding: 0.75rem;
+        margin: 1rem 0;
+    }
+
+    .price-display .price {
+        font-size: 1.25rem;
+    }
+
+    /* About section mobile */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .about-content img {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    /* Contact section mobile */
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-item i {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Footer mobile */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-section {
+        padding: 1rem 0;
+    }
+
+    .footer-section h3,
+    .footer-section h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-section p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 0.25rem;
+    }
+
+    .footer-section ul li a {
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1.75rem;
+    }
+
+    .footer-bottom {
+        padding-top: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Modal mobile */
+    .modal-content {
+        margin: 5% auto;
+        width: 95%;
+        max-width: none;
+        padding: 1rem;
+        border-radius: 8px;
+        max-height: 90vh;
+    }
+
+    .close {
+        right: 0.75rem;
+        top: 0.75rem;
+        font-size: 1.25rem;
+    }
+
+    /* Cart modal mobile */
+    .cart-item {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        text-align: center;
+    }
+
+    .cart-item-image {
+        width: 60px;
+        height: 60px;
+        align-self: center;
+    }
+
+    .cart-item-details {
+        text-align: center;
+    }
+
+    .cart-item-title {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .cart-item-price {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .custom-design-info {
+        font-size: 0.8rem;
+        margin: 0.25rem 0;
+    }
+
+    .quantity-controls {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 0.75rem 0;
+    }
+
+    .quantity-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .quantity-input {
+        width: 50px;
+        padding: 0.25rem;
+        text-align: center;
+    }
+
+    .remove-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+
+    .cart-total {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .cart-actions .btn {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Checkout modal mobile */
+    .checkout-custom-preview {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .checkout-custom-preview .garment-mini {
+        width: 80px;
+        height: 80px;
+        align-self: center;
+    }
+
+    .checkout-custom-details h5 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .checkout-custom-details p {
+        font-size: 0.85rem;
+        margin: 0.25rem 0;
+    }
+
+    /* Form mobile */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 6px;
+    }
+
+    .form-group textarea {
+        min-height: 80px;
+        resize: vertical;
+    }
+
+    /* Buttons mobile */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+
+    .btn i {
+        margin-right: 0.25rem;
+    }
+
+    /* Notification mobile */
+    .notification {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+
+    .notification-close {
+        font-size: 1rem;
+        padding: 0.25rem;
+    }
+
+    /* Control buttons mobile */
+    .control-buttons {
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .position-controls,
+    .size-controls {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    /* Design control panel mobile */
+    .design-control-panel {
+        padding: 0.75rem;
+        margin: 1rem 0;
+    }
+
+    .control-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .control-row label {
+        min-width: auto;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .control-row input[type="range"] {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Preview info mobile */
+    .preview-info {
+        padding: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .preview-info p {
+        font-size: 0.85rem;
+        margin: 0.5rem 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.25rem;
+    }
+
+    .preview-info i {
+        font-size: 1rem;
+    }
+
+    /* Animation adjustments for mobile */
+    .fade-in {
+        transform: translateY(10px);
+    }
+
+    /* Touch-friendly adjustments */
+    .cart-icon,
+    .close,
+    .notification-close,
+    .control-btn,
+    .quantity-btn,
+    .remove-btn,
+    .color-option,
+    .product-color-option {
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
+    }
+
+    /* Prevent zoom on input focus */
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    /* Improve scrolling on mobile */
+    .modal-content {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better spacing for mobile forms */
+    .checkout-form,
+    .custom-editor {
+        padding: 0.5rem;
+    }
+
+    /* Mobile-specific utility classes */
+    .mobile-center {
+        text-align: center;
+    }
+
+    .mobile-full-width {
+        width: 100%;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+    /* Improve mobile navigation */
+    nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav ul {
+        white-space: nowrap;
+        padding: 0 1rem;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-slogan {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .product-card {
+        max-width: 300px;
+    }
+
+    .garment-container {
+        width: 120px;
+        height: 150px;
+    }
+
+    .modal-content {
+        margin: 2% auto;
+        width: 98%;
+        padding: 0.75rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .contact-item {
+        padding: 1rem;
+    }
+
+    .footer-section {
+        padding: 0.75rem 0;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-slogan {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+}
