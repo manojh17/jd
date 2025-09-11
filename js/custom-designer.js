@@ -25,7 +25,7 @@
         hoodie: {
             white: './assets/products/hoodie/white-hoodie.png',
             black: './assets/products/hoodie/black-hoodie.png',
-            navy: './assets/products/hoodie/blue-hoodie.png',
+            blue: './assets/products/hoodie/blue-hoodie.png',
             red: './assets/products/hoodie/red-hoodie.png',
             green: './assets/products/hoodie/green-hoodie.png'
         },
