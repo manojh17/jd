@@ -1,6 +1,6 @@
 // whatsapp.js - WhatsApp order integration
 (function() {
-    const BUSINESS_PHONE = '917397792752'; // +91 73977 92752 in international format
+    const BUSINESS_PHONE = '919597562259'; // +91 73977 92752 in international format
     
     const checkoutForm = document.getElementById('checkout-form');
     const checkoutClose = document.getElementById('checkout-close');
